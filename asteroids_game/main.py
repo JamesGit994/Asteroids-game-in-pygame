@@ -15,11 +15,13 @@ def main():
                 return
         
         
-        screen.fill("black")
-        player.draw(screen)
-        pygame.display.flip()
         delte_time = fps.tick(60)
         dt = delte_time / 1000
+        screen.fill("black")
+        player.update(dt)
+        player.draw(screen)
+        pygame.display.flip()
+
 
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
